@@ -1,25 +1,22 @@
 # --- ADD THESE ---
 
-# Environment Variables (CRITICAL for Firebase/AWS keys)
+# Environment Variables
 .env
 *.env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
-# Vite / Build Tooling
+# Vite
 .vite
 .turbo
 .vercel
 .netlify
 
-# TypeScript / Build cache
+# TypeScript 
 *.tsbuildinfo
 package-lock.json
-# (Note: Some developers keep package-lock, but for a personal portfolio, 
-# it's often cleaner to ignore if you're frequently switching environments)
 
-# macOS specific (beyond just .DS_Store)
 .AppleDouble
 .LSOverride
 Icon
