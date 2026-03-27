@@ -1,24 +1,29 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# --- ADD THESE ---
 
+# Environment Variables (CRITICAL for Firebase/AWS keys)
+.env
+*.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Vite / Build Tooling
+.vite
+.turbo
+.vercel
+.netlify
+
+# TypeScript / Build cache
+*.tsbuildinfo
+package-lock.json
+# (Note: Some developers keep package-lock, but for a personal portfolio, 
+# it's often cleaner to ignore if you're frequently switching environments)
+
+# macOS specific (beyond just .DS_Store)
+.AppleDouble
+.LSOverride
+Icon
+Network Trash Folder
+Temporary Items
+.apdisk
 node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
