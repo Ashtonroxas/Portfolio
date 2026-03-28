@@ -31,6 +31,13 @@
   * {
     @apply border-border;
   }
+  
+  /* ADDED: Smooth scrolling and padding for the NavBar */
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem; 
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: 'Plus Jakarta Sans', sans-serif;
@@ -45,5 +52,12 @@
   ::-webkit-scrollbar-thumb {
     background: hsl(var(--border));
     border-radius: 10px;
+  }
+}
+
+@layer utilities {
+  /* ADDED: Required for the 3D tilt hover effect on Project Cards */
+  .perspective-1000 {
+    perspective: 1000px;
   }
 }

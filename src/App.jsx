@@ -1,7 +1,6 @@
 import React from "react";
 import { motion, useScroll, useSpring, useTransform, useMotionValue } from "framer-motion";
-import { ExternalLink, ChevronDown, MapPin, GraduationCap, HeartHandshake, Code2, Camera, Music, Utensils } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ExternalLink, ChevronDown, MapPin, GraduationCap, HeartHandshake, Code2, Camera, Music, Utensils, Award, Heart, Coffee, Target, Headphones, Gamepad2 } from "lucide-react";import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -57,6 +56,9 @@ export default function App() {
         style={{ scaleX }} 
       />
 
+      {/* Navigation Bar */}
+      <NavBar />
+
       {/* --- HERO SECTION --- */}
       <section className="relative flex flex-col items-center justify-center min-h-screen px-6 text-center z-10">
         
@@ -66,9 +68,9 @@ export default function App() {
           animate="visible"
           className="max-w-4xl space-y-8 relative"
         >
-          {/* Animated Philippine Sun with Profile Picture */}
-          <motion.div variants={itemVariants} className="flex justify-center mb-6">
-            <PhilippineSunProfile />
+          {/* Orbiting Tech Logos with Profile Picture */}
+          <motion.div variants={itemVariants} className="flex justify-center mb-6 mt-8">
+            <TechOrbitProfile />
           </motion.div>
 
           {/* Letter-by-Letter Reveal with Blur */}
@@ -127,9 +129,7 @@ export default function App() {
                 alt="Ashton's Profile" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              {/* Decorative inner border */}
               <div className="absolute inset-0 border border-white/20 rounded-2xl pointer-events-none"></div>
-              {/* Subtle gradient overlay at the bottom for a premium look */}
               <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
             </div>
           </motion.div>
@@ -148,17 +148,28 @@ export default function App() {
               </motion.p>
               
               <motion.p variants={itemVariants}>
-                I have a strong passion for engineering scalable solutions and optimizing system performance. Whether I'm building serverless platforms in AWS, developing real-time web applications, or creating high-performance tools in C++, I love tackling complex technical challenges from the ground up.
+                I have a strong passion for engineering scalable solutions and optimizing system performance. Whether I'm building serverless 
+                platforms in AWS, developing real-time web applications, or creating high-performance tools in C++, I love tackling complex technical 
+                challenges from the ground up.
               </motion.p>
               
               <motion.p variants={itemVariants}>
-                Beyond the code, I believe in the power of community. Leading the UML Filipino Club has taught me that building great software requires the same core skills as building great teams: clear communication, empathy, and a shared vision. When I'm unplugged from my IDE, you can usually find me playing the guitar, exploring photography, or unwinding with a good video game.
+                Beyond coding, I believe in the power of community. Leading the UML Filipino Club has taught me that 
+                building great software requires the same core skills as building great teams: clear 
+                communication, empathy, and a shared vision. When I'm unplugged from my IDE, you can 
+                usually find me swinging at the Driving Range, listening to my fire playlist, or unwinding with a good video game.
               </motion.p>
               
               <motion.div variants={itemVariants} className="pt-2 flex gap-3 flex-wrap">
-                <Badge variant="outline" className="border-border/80 text-muted-foreground bg-white/50 backdrop-blur-sm px-4 py-2 hover:bg-white hover:text-foreground transition-colors"><Code2 className="w-4 h-4 mr-2"/> Web Dev</Badge>
-                <Badge variant="outline" className="border-border/80 text-muted-foreground bg-white/50 backdrop-blur-sm px-4 py-2 hover:bg-white hover:text-foreground transition-colors"><Camera className="w-4 h-4 mr-2"/> Photography</Badge>
-                <Badge variant="outline" className="border-border/80 text-muted-foreground bg-white/50 backdrop-blur-sm px-4 py-2 hover:bg-white hover:text-foreground transition-colors"><Music className="w-4 h-4 mr-2"/> Guitar</Badge>
+                <Badge variant="outline" className="border-border/80 text-muted-foreground bg-white/50 backdrop-blur-sm px-4 py-2 hover:bg-white hover:text-foreground transition-colors">
+                  <Target className="w-4 h-4 mr-2"/> Driving Range
+                </Badge>
+                <Badge variant="outline" className="border-border/80 text-muted-foreground bg-white/50 backdrop-blur-sm px-4 py-2 hover:bg-white hover:text-foreground transition-colors">
+                  <Headphones className="w-4 h-4 mr-2"/> Music
+                </Badge>
+                <Badge variant="outline" className="border-border/80 text-muted-foreground bg-white/50 backdrop-blur-sm px-4 py-2 hover:bg-white hover:text-foreground transition-colors">
+                  <Gamepad2 className="w-4 h-4 mr-2"/> Gaming
+                </Badge>
               </motion.div>
             </div>
 
@@ -173,7 +184,7 @@ export default function App() {
       </section>
 
       {/* SKILLS SECTION */}
-      <section className="py-32 px-6 relative z-10">
+      <section id="skills" className="py-32 px-6 relative z-10">
         <motion.div 
           variants={containerVariants} 
           initial="hidden" 
@@ -209,14 +220,14 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <TiltProjectCard 
               title="AudioByte" 
-              tech={["Python", "AWS", "CDK", "JavaScript", "GraphQL"]}
+              tech={["Python", "AWS", "CDK", "GraphQL"]}
               details={["Provisioned a cloud-native music platform utilizing AWS CDK.", "Constructed a serverless GraphQL API backed by Python Lambda resolvers."]}
               image="/project_pics/audiobyte.png"
               githubLink="https://github.com/Ashtonroxas/AudioByte"
             />
             <TiltProjectCard 
               title="GroupTab" 
-              tech={["React", "Python(Flask)", "Firebase", "JavaScript"]}
+              tech={["React", "Python(Flask)", "Firebase"]}
               details={["Developed a real-time synchronization engine using Firestore listeners.", "Architected a serverless backend with Row-Level Security."]}
               image="/project_pics/grouptab.png"
               githubLink="https://github.com/Ashtonroxas/GroupTab"
@@ -226,7 +237,7 @@ export default function App() {
               tech={["Kotlin", "Spring Boot", "Azure AI"]}
               details={["Engineered a career discovery platform for UML students leveraging LLM logic.", "Automated ingestion and parsing of University course catalogs."]}
               image="/project_pics/hawkadvisor.png"
-              githubLink="https://github.com/Ashtonroxas/Hawkadvisor"
+              githubLink="https://github.com/Ashtonroxas/HawkAdvisor"
             />
             <TiltProjectCard 
               title="Sokoban Game" 
@@ -245,35 +256,50 @@ export default function App() {
         </motion.div>
       </section>
 
-      {/* LEADERSHIP SECTION */}
-      <section className="py-32 px-6 relative z-10">
+      {/* EXPERIENCE & LEADERSHIP SECTION */}
+      <section id="experience" className="py-32 px-6 relative z-10">
         <motion.div 
           variants={containerVariants} 
           initial="hidden" 
           whileInView="visible" 
           viewport={{ once: true, margin: "-100px" }}
-          className="max-w-4xl mx-auto space-y-16"
+          className="max-w-6xl mx-auto space-y-16"
         >
           <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-extrabold text-primary border-b-4 border-secondary inline-block pb-2 bg-white/40 px-2 rounded-xl backdrop-blur-sm">
             Experience & Leadership
           </motion.h2>
 
-          <div className="space-y-10 relative before:absolute before:inset-0 before:ml-2.5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-1 before:bg-gradient-to-b before:from-secondary before:via-secondary/50 before:to-transparent">
-            <TimelineItem 
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <ExperienceCard 
               title="President"
               organization="UML The Filipino Club"
               date="April 2024 - April 2025"
+              icon={Award}
+              colorClass="border-t-blue-500 border-x-border/50 border-b-border/50"
               details={[
                 "Directed a cross-functional team of 10 officers, managing a semester operating budget of $2,000+.",
                 "Spearheaded comprehensive recruitment initiatives, driving active membership up by 25%."
               ]}
             />
-            <TimelineItem 
+            <ExperienceCard 
               title="Volunteer"
-              organization="Boston Misang Pinoy"
+              organization="Boston Misang Pinoy (Filipino Church)"
               date="December 2020 - Present"
+              icon={Heart}
+              colorClass="border-t-rose-500 border-x-border/50 border-b-border/50"
               details={[
                 "Consistently engaged in community organizing, event support, and logistics for local cultural initiatives."
+              ]}
+            />
+            <ExperienceCard 
+              title="Shift Lead"
+              organization="Gong Cha"
+              date="Jun 2021 - December 2024"
+              icon={Coffee}
+              colorClass="border-t-amber-500 border-x-border/50 border-b-border/50"
+              details={[
+                "Managed high-volume order workflows during peak hours, ensuring accuracy and efficiency.",
+                "Collaborated with team members to maintain seamless front-of-house operations and resolve customer inquiries."
               ]}
             />
           </div>
@@ -288,7 +314,7 @@ export default function App() {
   );
 }
 
-// UPDATED SUB-COMPONENTS
+// SUB-COMPONENTS
 
 function AnimatedBackground() {
   return (
@@ -307,33 +333,48 @@ function AnimatedBackground() {
   );
 }
 
-function PhilippineSunProfile() {
-  return (
-    <div className="relative w-56 h-56 mx-auto flex items-center justify-center">
-      {/* Philippine Sun */}
-      <motion.svg
-        viewBox="0 0 100 100"
-        className="absolute inset-0 w-full h-full text-secondary drop-shadow-[0_0_15px_rgba(255,215,0,0.5)]"
-        animate={{ rotate: 360 }}
-        transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
-      >
-        {/* The 8 rays of the sun */}
-        {[0, 45, 90, 135, 180, 225, 270, 315].map((degree) => (
-          <g key={degree} transform={`rotate(${degree} 50 50)`}>
-            {/* Main Center Ray */}
-            <polygon points="48,18 50,-2 52,18" fill="currentColor" />
-            {/* Left Sub Ray */}
-            <polygon points="45,21 34,7 47.5,19" fill="currentColor" />
-            {/* Right Sub Ray */}
-            <polygon points="55,21 66,7 52.5,19" fill="currentColor" />
-          </g>
-        ))}
-        {/* Inner circle of the sun */}
-        <circle cx="50" cy="50" r="23" fill="currentColor" />
-      </motion.svg>
+function TechOrbitProfile() {
+  const techLogos = [
+    { name: "React", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+    { name: "Python", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
+    { name: "C++", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" },
+    { name: "JavaScript", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
+    { name: "Java", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" },
+    { name: "Go", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg" },
+    { name: "C", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" },
+    { name: "TypeScript", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" },
+  ];
 
-      {/* Profile Picture overlaying the sun center */}
-      <div className="relative w-32 h-32 md:w-36 md:h-36 rounded-full p-1 bg-gradient-to-tr from-primary to-secondary shadow-2xl z-10">
+  return (
+    <div className="relative w-80 h-80 mx-auto flex items-center justify-center">
+      <motion.div
+        className="absolute inset-0 w-full h-full"
+        animate={{ rotate: 360 }} 
+        transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+      >
+        {techLogos.map((logo, i) => {
+          const angle = i * (360 / techLogos.length);
+          return (
+            <div 
+              key={logo.name} 
+              className="absolute top-1/2 left-1/2 w-14 h-14 -ml-7 -mt-7" 
+              style={{ transform: `rotate(${angle}deg) translateY(-130px)` }}
+            >
+              <div style={{ transform: `rotate(-${angle}deg)` }} className="w-full h-full bg-white/90 backdrop-blur-sm p-2.5 rounded-full shadow-lg border border-border/50 flex items-center justify-center">
+                <motion.img 
+                  src={logo.url} 
+                  alt={logo.name}
+                  className="w-full h-full object-contain drop-shadow-sm"
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                />
+              </div>
+            </div>
+          );
+        })}
+      </motion.div>
+
+      <div className="relative w-40 h-40 md:w-44 md:h-44 rounded-full p-1 bg-gradient-to-tr from-primary to-secondary shadow-2xl z-10">
         <img
           src="/Profile_pics/profile.jpg"
           alt="Profile Headshot"
@@ -358,24 +399,34 @@ function InfoCard({ icon, title, subtitle }) {
   )
 }
 
-function TimelineItem({ title, organization, date, details }) {
+function ExperienceCard({ title, organization, date, details, icon: Icon, colorClass }) {
   return (
-    <motion.div variants={itemVariants} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-      <div className="flex items-center justify-center w-6 h-6 rounded-full border-4 border-white bg-secondary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10" />
-      <div className="w-[calc(100%-2.5rem)] md:w-[calc(50%-1.5rem)] bg-white/80 backdrop-blur-md p-7 rounded-2xl border border-border/50 shadow-sm hover:shadow-lg hover:border-secondary transition-all">
-        <div className="flex flex-col mb-4">
-          <h3 className="text-2xl font-extrabold text-foreground">{title}</h3>
-          <p className="text-primary font-bold">{organization}</p>
-          <Badge variant="outline" className="mt-2 w-fit bg-background text-muted-foreground border-border/80">{date}</Badge>
+    <motion.div 
+      variants={itemVariants} 
+      whileHover={{ y: -8 }}
+      className="h-full"
+    >
+      <div className={`h-full bg-white/80 backdrop-blur-md p-7 rounded-2xl border-t-4 shadow-sm hover:shadow-xl transition-all flex flex-col ${colorClass}`}>
+        <div className="flex flex-col mb-5">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="p-2.5 bg-muted/50 rounded-xl text-primary shadow-inner">
+              <Icon className="w-6 h-6" />
+            </div>
+            <h3 className="text-2xl font-extrabold text-foreground leading-tight">{title}</h3>
+          </div>
+          <p className="text-primary font-bold text-lg">{organization}</p>
+          <Badge variant="outline" className="mt-3 w-fit bg-background text-muted-foreground border-border/80 shadow-sm">
+            {date}
+          </Badge>
         </div>
-        <ul className="space-y-3 text-sm text-muted-foreground list-disc list-inside marker:text-secondary">
+        <ul className="space-y-3 text-sm text-muted-foreground list-disc list-inside marker:text-primary/40 flex-grow">
           {details.map((detail, idx) => (
             <li key={idx} className="leading-relaxed">{detail}</li>
           ))}
         </ul>
       </div>
     </motion.div>
-  )
+  );
 }
 
 function SkillCategory({ title, skills }) {
@@ -422,7 +473,6 @@ function TiltProjectCard({ title, tech, details, image, githubLink }) {
       <a href={githubLink} target="_blank" rel="noopener noreferrer" className="block h-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary rounded-xl">
         <Card style={{ transform: "translateZ(50px)" }} className="h-full flex flex-col bg-white/80 backdrop-blur-md border-border/60 shadow-lg hover:border-secondary transition-colors duration-500 group overflow-hidden">
           
-          {/* Project Image Section */}
           {image && (
             <div className="w-full h-48 overflow-hidden bg-muted/30">
               <img 
@@ -471,5 +521,23 @@ function LinkedinIcon(props) {
       <rect width="4" height="12" x="2" y="9" />
       <circle cx="4" cy="4" r="2" />
     </svg>
+  );
+}
+
+function NavBar() {
+  return (
+    <motion.nav 
+      initial={{ y: -50, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
+      className="fixed top-4 w-full px-6 z-50 flex justify-center md:justify-end pointer-events-none"
+    >
+      <div className="bg-white/70 backdrop-blur-xl border border-border/50 px-6 py-3 rounded-full shadow-lg flex gap-4 md:gap-8 font-extrabold text-xs md:text-sm text-muted-foreground pointer-events-auto">
+        <a href="#about" className="hover:text-primary transition-colors">About</a>
+        <a href="#skills" className="hover:text-primary transition-colors">Skills</a>
+        <a href="#projects" className="hover:text-primary transition-colors">Projects</a>
+        <a href="#experience" className="hover:text-primary transition-colors">Experience</a>
+      </div>
+    </motion.nav>
   );
 }
