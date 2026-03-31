@@ -43,7 +43,7 @@ export default function Experience() {
           <ExperienceCard 
             title="Shift Lead"
             organization="Gong Cha"
-            date="Jun 2021 - December 2024"
+            date="June 2021 - December 2024"
             icon={Coffee}
             colorClass="border-t-amber-500 border-x-border/50 border-b-border/50"
             details={[
