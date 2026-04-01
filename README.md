@@ -1,16 +1,17 @@
-# React + Vite
+# Ashton Roxas - Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive, highly interactive personal portfolio built to showcase my software engineering projects, technical skills, and experience. 
 
-Currently, two official plugins are available:
+## ✨ Features
+* **Modern UI/UX:** Built with React and styled using Tailwind CSS for a fully responsive, mobile-first design.
+* **Framer Motion Animations:** Smooth page reveals, a continuous rotating tech-stack orbit, and dynamic layout transitions.
+* **Interactive Project Cards:** Custom 3D tilt effects tied to mouse movement for a highly engaging user experience.
+* **Integrated Resume:** One-click resume download functionality directly from the Hero section.
+* **Smooth Navigation:** Fixed, glassmorphism navigation bar with precise smooth-scrolling anchors to page sections.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+* **Framework:** [React](https://react.dev/) + [Vite](https://vitejs.dev/)
+* **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+* **Animation:** [Framer Motion](https://www.framer.com/motion/)
+* **Icons:** [Lucide React](https://lucide.dev/) & DevIcons
+* **UI Components:** Customized [shadcn/ui](https://ui.shadcn.com/) foundations
