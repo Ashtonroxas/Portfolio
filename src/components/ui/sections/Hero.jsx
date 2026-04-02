@@ -52,7 +52,7 @@ export default function Hero() {
         
         <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-4 pt-8">
           <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full px-10 py-7 shadow-xl shadow-primary/20 transition-all hover:-translate-y-1">
-            <a href="#about">View Portfolio <ChevronDown className="ml-2 w-5 h-5 animate-bounce" /></a>
+            <a href="#about">About Me! <ChevronDown className="ml-2 w-5 h-5 animate-bounce" /></a>
           </Button>
 
           <Button asChild variant="outline" className="border-border/60 bg-white/40 backdrop-blur-md hover:bg-secondary hover:text-secondary-foreground text-foreground rounded-full px-8 py-7 shadow-sm transition-all hover:-translate-y-1">

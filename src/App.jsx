@@ -1,6 +1,9 @@
 import React from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 
+// Assets
+import ashtonLogo from "./assets/ar.png";
+
 // Shared Components
 import AnimatedBackground from "./components/ui/shared/AnimatedBackground.jsx";
 import NavBar from "./components/ui/shared/NavBar.jsx";
@@ -45,7 +48,17 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <footer className="py-16 text-center text-muted-foreground border-t border-border/50 bg-white/80 backdrop-blur-md relative z-10">
+      <footer className="py-16 flex flex-col items-center justify-center text-center text-muted-foreground border-t border-border/50 bg-white/80 backdrop-blur-md relative z-10">
+        
+        {/* Ashton's Custom Logo */}
+        <motion.img 
+          src={ashtonLogo} 
+          alt="Ashton Roxas Logo" 
+          className="w-16 h-16 mb-6 drop-shadow-md"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        />
+
         <p className="font-bold text-primary tracking-tight">
           © {new Date().getFullYear()} Ashton Rich Roxas
         </p>
