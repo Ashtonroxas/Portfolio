@@ -7,10 +7,10 @@ import { containerVariants, itemVariants } from "@/lib/animation";
 export default function Experience() {
   return (
     <section id="experience" className="py-32 px-6 relative z-10">
-      <motion.div 
-        variants={containerVariants} 
-        initial="hidden" 
-        whileInView="visible" 
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         className="max-w-6xl mx-auto space-y-16"
       >
@@ -19,7 +19,7 @@ export default function Experience() {
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <ExperienceCard 
+          <ExperienceCard
             title="President"
             organization="UML The Filipino Club"
             date="April 2024 - April 2025"
@@ -30,7 +30,7 @@ export default function Experience() {
               "Spearheaded comprehensive recruitment initiatives, driving active membership up by 25%."
             ]}
           />
-          <ExperienceCard 
+          <ExperienceCard
             title="Volunteer"
             organization="Boston Misang Pinoy (Filipino Church)"
             date="December 2020 - Present"
@@ -40,7 +40,7 @@ export default function Experience() {
               "Consistently engaged in community organizing, event support, and logistics for local cultural initiatives."
             ]}
           />
-          <ExperienceCard 
+          <ExperienceCard
             title="Shift Lead"
             organization="Gong Cha"
             date="June 2021 - December 2024"
@@ -51,6 +51,18 @@ export default function Experience() {
               "Collaborated with team members to maintain seamless front-of-house operations and resolve customer inquiries."
             ]}
           />
+          <ExperienceCard
+            title="Software Engineer Intern"
+            organization="Sprague Operating Resources LLC — Portsmouth, NH"
+            date="June 2026 - Present"
+            icon={Award}
+            colorClass="border-t-emerald-500 border-x-border/50 border-b-border/50"
+            details={[
+              "Developed and expanded a production Python data-reconciliation platform that compares counterparty, address, and contact records across enterprise systems and generates reviewer-approved change requests for downstream ETL processing.",
+              "Migrated legacy SSIS workflows into reusable Python pipelines that execute parameterized SQL Server stored procedures, normalize output formats, generate deterministic CSV files, and publish billing data to AWS S3.",
+              "Implemented feature-flagged rollout support for new reconciliation workflows covering missing and extra addresses, contacts, and counterparty-field discrepancies, enabling controlled delivery of additional automated remediation capabilities."
+            ]}
+          />
         </div>
       </motion.div>
     </section>
@@ -59,8 +71,8 @@ export default function Experience() {
 
 function ExperienceCard({ title, organization, date, details, icon: Icon, colorClass }) {
   return (
-    <motion.div 
-      variants={itemVariants} 
+    <motion.div
+      variants={itemVariants}
       whileHover={{ y: -8 }}
       className="h-full"
     >
